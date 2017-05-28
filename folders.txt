@@ -1,0 +1,20 @@
+++++ Total users=8 ++++
+------------------------------
+admin  | admin
+chfmgr | chief manager
+stkmgr | stock manager
+saleex | sales executive
+
+impmgr | import manager
+supp   | supplier
+dealer | dealer
+regcus | registered customer
+_______________________________
+
+stat   | all static pages to general users of the site??
+css    | all css files
+img    | all images related for users
+js     | javascript files
+_______________________________
+
+index.php files are used in every folder to prevent unauthorized acccess

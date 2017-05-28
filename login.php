@@ -15,7 +15,7 @@
 		<div id="topp">
 			<center>
 				This is top
-				
+				-- dunlop logo eka vithrk damu --
 			</center>
 		</div>
 		<!--end of the top divisor-->
@@ -25,6 +25,7 @@
 			<div id="leftd" >
 				<P>
 					bottom left blah dhjf eklgfd ikfgsd welihfgwedf  wrelgfn ljnsfg kjndfg dsrlng edsrloikngs
+					-- left side panal eke visthara danna --
 				</P>
 			</div>
 			<!--end of the left pane-->
@@ -59,7 +60,7 @@
 		<!--start of the footer-->
 		<div id="foot" style="">
 			<center class="footfix">
-				&copy;KS <a href="http://ugvle.ucsc.cmb.ac.lk">visit us</a>
+				&copy;Group 29 <a href="http://ugvle.ucsc.cmb.ac.lk">visit us</a>
 			</center>
 		</div>
 		<!--end of the footer-->

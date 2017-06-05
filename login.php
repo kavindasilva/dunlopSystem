@@ -31,7 +31,7 @@
 			<!--end of the left pane-->
 
 			<!--start of the main pane-->
-			<div id="rightd" >
+			<div id="rightd" style="text-align: center" >
 				<P>
 					Bottom right word1 word2 word 3 sdkljn slngsd olhnjwsdfg jlojhnswgf lnhsgd word6 word7 word8
 				</P>

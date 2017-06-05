@@ -97,24 +97,32 @@
        
         <div class="modal fade" id="myModal">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">x</button>
-            <h3>Login to MyWebsite.com</h3>
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+<h3 style="color: black;font-style: italic;font-weight:500">Login</h3>
+         
           </div>
           <div class="modal-body">
-            <form method="post" action='' name="login_form">
-              <p><input type="text" class="span3" name="euname" id="username" placeholder="UserName"></p>
-              <p><input type="password" class="span3" name="passwd" placeholder="Password"></p>
+            <form method="post" action="php/user.php" name="login_form">
+              <p><input  style="color: black;font-style: italic;font-weight:500" type="text" class="span3" name="euname" id="username" placeholder="UserName" required></p>
+              <p><input  style="color: black;font-style: italic;font-weight:500" type="password" class="span3" name="passwd" placeholder="Password" required></p>
               <p><button type="submit" class="btn btn-primary">Sign in</button>
-                <a href="#">Forgot Password?</a>
+                <a  style="color: black;font-style: italic;font-weight:500" href="#">Forgot Password?</a>
               </p>
             </form>
           </div>
-          <div class="modal-footer">
-            New To MyWebsite.com?
-            <a href="#" class="btn btn-primary">Register</a>
-          </div>
+          <div class="modal-footer">Not Registerd? <a href="#" class="btn btn-primary">Register</a></div>
         </div>
-        
+       <script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script> 
         
       
       <a class="left carousel-control" href="#carousel1" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="right carousel-control" href="#carousel1" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Next</span></a></div>

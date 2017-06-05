@@ -1,19 +1,14 @@
 <?php
-//check session
-/*
-if(isset($_SESSION['user'])){
-	header('Location: home.php');
-}
-*/
+
 
 require_once 'dbcon.php';
 
-if(isset($_POST['log'])){
+//if(isset($_POST['log'])){
 	//echo "form login";
-	$name = $_POST['email'];
-	$password = $_POST['pass'];
+	$name = $_POST['euname'];
+	$password = $_POST['passwd'];
 	
-	$checkName = "select * from users where email='$name'";
+	$checkName = "select * from user where username='$name'";
 	
 	$result = mysqli_query($conn, $checkName);
 	
@@ -31,7 +26,7 @@ if(isset($_POST['log'])){
 		$rpass = $r['password']; //password from DB
 		if ($rpass==$password){
 			$_SESSION['user']=''; //user id
-			echo "Login succesful<passe redirection karamu>";
+				 header("Location:../welcome.html");
 			
 			//adm=admin, sae=sales exe, chf=chief mgr...
 			$usrtype=$r['type'];
@@ -46,12 +41,14 @@ if(isset($_POST['log'])){
 			//header('Location: user.php'); //redirection
 		}
 		else{
-			echo "login fail msg";
-			echo "<br><a href=\"javascript:history.go(-1)\">BACK</a>";
+			
+			//echo "<br><a href=\"javascript:history.go(-1)\">BACK</a>";
+			 header("Location:../invalidlogin.html");
+			
 		}
 	}
 	
-}
+//}
 
 
 ?>

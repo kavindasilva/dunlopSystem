@@ -4493,8 +4493,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #f8f8f8;
-  border-color: #e7e7e7;
+	background-color: #f8f8f8;
+	border-color: #461516;
 }
 .navbar-default .navbar-brand {
   color: #777;
@@ -5867,16 +5867,18 @@ button.close {
   overflow: hidden;
 }
 .modal {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1050;
-  display: none;
-  overflow: hidden;
-  -webkit-overflow-scrolling: touch;
-  outline: 0;
+  position:fixed;
+  top: 20%;
+  right:38%;
+  bottom: 35%;
+  left: 35%;
+  z-index:1050;
+  display:none;
+  overflow:hidden;
+ /* -webkit-overflow-scrolling: touch;*/
+  outline:outset;
+	background: #F3F3F3;
+	
 }
 .modal.fade .modal-dialog {
   -webkit-transition: -webkit-transform .3s ease-out;

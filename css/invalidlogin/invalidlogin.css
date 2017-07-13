@@ -1,6 +1,10 @@
 #invalidh{
 	color: aliceblue;
-	background: #EC080C;
-	position: fixed;
-	right: 30%;
+	background-color: chocolate;
+	position: inherit;
+	right: 50%;
+}
+
+#invalidform{
+	background-color:antiquewhite;
 }

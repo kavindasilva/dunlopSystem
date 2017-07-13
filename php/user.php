@@ -26,7 +26,7 @@ require_once 'dbcon.php';
 		$rpass = $r['password']; //password from DB
 		if ($rpass==$password){
 			$_SESSION['user']=''; //user id
-				 header("Location:../welcome.html");
+				 header("Location:../Dashbord/adminlte.io/themes/AdminLTE/index2.html");
 			
 			//adm=admin, sae=sales exe, chf=chief mgr...
 			$usrtype=$r['type'];

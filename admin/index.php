@@ -11,10 +11,16 @@
  }
 
 /**/
-include '../php/dbcon.php';
+include '../php/dbcon2.php';
 //include  //header files & css,JS
 
 ?>
+<script type="text/javascript" src="adminFun.js"></script>
+methana adminge control panel eka danna(button set eka)
+<form method="get" action="">
+<input ty />
+</form>
+
 
 <?php
 //view all users

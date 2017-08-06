@@ -17,6 +17,19 @@ include '../php/dbcon2.php';
 ?>
 <script type="text/javascript" src="adminFun.js"></script>
 methana adminge control panel eka danna(button set eka)
+<div class="">
+	<a href="adduser.php?type=cust"><button class="" name="" value="">Customer</button></a>
+	<a href="adduser.php?type=salex"><button class="" name="" value="">Sales Executive</button></a>
+	<a href="adduser.php?type=dealer"><button class="" name="" value="">Dealer</button></a> <br />
+	
+	<a href="adduser.php?type=suppl"><button class="" name="" value="">Supplier</button></a>
+	<a href="adduser.php?type="><button class="" name="" value="" hidden></button></a>
+	<a href="adduser.php?type="><button class="" name="" value="" hidden></button></a> <br />
+	
+	<a href="adduser.php?type="><button class="" name="" value="" hidden></button></a>
+	<a href="adduser.php?type="><button class="" name="" value="" hidden></button></a> <br />
+	
+</div>
 <form method="get" action="">
 <input ty />
 </form>

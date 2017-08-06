@@ -20,7 +20,7 @@ $newUserType=$_GET['type'];
 
 
 ?>
-<form method="post" action="">
+<form method="post" action="adminfuns1.php">
 <table>
 	<tr><td>First name</td>	<td><input type="text" name="fname" autocomplete="off" required/></td></tr>
 	<tr><td>Last name</td>	<td><input type="text" name="lname" autocomplete="off" required=""/></td></tr>
@@ -37,7 +37,7 @@ $newUserType=$_GET['type'];
 		salesEx();break;
 	
 	case 'dealer': echo"<title>New Dealer</title>";
-		;break;
+		dealer();break;
 	
 	case 'suppl': echo"<title>New Supplier</title>";
 		supplier();break;
@@ -58,15 +58,22 @@ $newUserType=$_GET['type'];
 
 function customer(){
 	echo "<tr><td>Company</td>		<td><input type='text' name='comp' autocomplete='off'/></td></tr>";
+	echo "<tr><td>User type</td>		<td><input type='text' name='utype' value='Customer' disabled/>";
 }
 
 function salesEx(){
 	//echo "<tr><td>Company</td>	<td><input type='text' name='comp' autocomplete='off'/></td></tr>";
+	echo "<tr><td>User type</td>		<td><input type='text' name='utype' value='Sales Executive' disabled/>";
 }
 
 function supplier(){
-	echo "<tr><td>Brand</td>		<td><input type='text' name='comp' autocomplete='on' required/></td></tr>";
-	echo "<tr><td>Country</td>		<td><input type='text' name='comp' autocomplete='on' required/></td></tr>";
+	echo "<tr><td>Brand</td>		<td><input type='text' name='brnd' autocomplete='on' required/></td></tr>";
+	echo "<tr><td>Country</td>		<td><input type='text' name='cont' autocomplete='on' required/></td></tr>";
+	echo "<tr><td>User type</td>		<td><input type='text' name='utype' value='Supplier' disabled/>";
+}
+
+function dealer(){
+	echo "<tr><td>User type</td>		<td><input type='text' name='utype' value='Dealer' disabled/>";
 }
 
 ?>

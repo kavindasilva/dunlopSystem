@@ -50,6 +50,15 @@ function confirmU() {
 		return false;
 }
 
+function confirmI(){
+	var x = confirm("Click OK to confirm the entry");
+	if (x)
+		return true;
+	else
+		return false;
+
+}
+
 function redirectMain(){
 	//window.open('index.php');
 	//window.location.href("index.php");
@@ -70,12 +79,6 @@ function clearAllTch() {
 	document.getElementById("search12").value = "";
 	document.getElementById("search13").value = "";
 	document.getElementById("search14").value = "";
-
-	searchRows(0, 'search11', 'tbltch');
-}
-
-function clearSubjects() {
-	document.getElementById("search11").value = "";
 
 	searchRows(0, 'search11', 'tbltch');
 }

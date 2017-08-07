@@ -16,6 +16,7 @@
 include '../php/dbcon2.php';
 //include  //header files & css,JS
 
+
 if(!isset($_GET['type'])){
 	//header("Location: index.php");
 }
@@ -23,6 +24,7 @@ $newUserType=$_GET['type'];
 
 
 ?>
+<script type="text/javascript" src="adminFun.js"></script>
 <!--head>
 	<link href="../css/bootstrap.css" rel="stylesheet">
 	<script src="../js/jquery-1.11.3.min.js"></script>
@@ -85,7 +87,7 @@ $newUserType=$_GET['type'];
 	?>
 	
 	
-	<tr><td><input type="submit" name="" value="OK" onclick="" /></td>	<td><input type="reset" value="Clear" /></td></tr>
+	<tr><td><input type="submit" name="" value="OK" onclick="return confirmI();" /></td>	<td><input type="reset" value="Clear" /></td></tr>
 </table>
 </form>
 

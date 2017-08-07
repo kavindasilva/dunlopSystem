@@ -51,7 +51,7 @@ switch ($newUserType) { //checks the user type to be inserted
 		break;
 
 	case 'suppl' :
-		supplier();
+		supplier($_POST['brnd'], $_POST['cont'], $username);
 		break;
 	case 'ks' :
 		break;
@@ -65,19 +65,27 @@ switch ($newUserType) { //checks the user type to be inserted
 function customer($comp, $tel, $un) {
 	$sqlq="insert into regular_customer values(null, '$comp', $tel, '$un');";
 	$res = mysqli_query($GLOBALS['conn'], $sqlq);
-	if(!res){
+	if(!$res){
 		echo "error inserting the customer";
-		echo mysqli_error();
+		echo mysqli_error($GLOBALS['conn']);
 		return;
 	}
-	echo "<script>alert('insertion succesful')</script>";
-	header("Location: index.php");
+	echo "<script>alert('Customer insertion succesful');window.location.href = 'index.php';</script>";
+	//header("Location: index.php");
 }
 
 function salesEx() {
 }
 
-function supplier() {
+function supplier($brnd, $coun, $un) {
+	$sqlq="insert into supplier values(null, '$brnd', '$coun', '$un');";
+	$res = mysqli_query($GLOBALS['conn'], $sqlq);
+	if(!$res){
+		echo "error inserting the supplier";
+		echo mysqli_error($GLOBALS['conn']);
+		return;
+	}
+	echo "<script>alert('Supplier insertion succesful');window.location.href = 'index.php';</script>";
 }
 
 function dealer() {

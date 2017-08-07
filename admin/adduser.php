@@ -60,7 +60,7 @@ $newUserType=$_GET['type'];
 	<tr><td>Email</td>		<td><input type="email" name="eml" autocomplete="off" required=""/></td></tr>
 	<tr><td>Address</td>	<td><textarea name="addr" autocomplete="off"></textarea></td></tr>
 	<tr><td>Phone</td>		<td><input type="text" name="telp" autocomplete="off" required=""/></td></tr>
-	<tr><td>Prefered username</td><td><input type="text" name="prefuser" autocomplete="off" required=""/></td></tr>
+	<tr><td>Prefered username</td><td><input type="text" name="prefuser" autocomplete="off" placeholder="danata vada na"/></td></tr>
 	<sub>danata username eka validate karanne na. ekata UI ekak dala availability check karanna oni</sub>
 	
 	<?php

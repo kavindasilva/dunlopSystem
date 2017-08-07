@@ -15,7 +15,7 @@ $username=$fnm.$lnm; //username eka unique, PK.
 
 $em=$_POST['eml'];
 $adr=$_POST['addr'];
-$phn=$_POST['telp'];
+$phn=$_POST['telp']; //supplier phone eka ain karoth meka oni na
 //insertUser();
 
 //check if username taken <> flash window eka dammata passe meka oni na
@@ -27,16 +27,19 @@ if(mysqli_num_rows($res)>0){
 	return;
 }
 
-$sql="insert into values('$username', 'skm', '$em', '$adr', '$newUserType')";
+$sql="insert into user values('$username', 'skm', '$em', '$adr', '$newUserType')";
 if(!mysqli_query($conn, $sql)){
 	echo "user insertion error";
+	echo mysqli_error($conn);
 	return;
 }
 
 
 switch ($newUserType) { //checks the user type to be inserted
 	case 'cust' :
-		customer("insert into regular_customer values();");
+		//customer("insert into regular_customer values(null, $phn, );");
+		$company=$_POST['comp']; 
+		customer($company, $phn, $username);
 		break;
 
 	case 'salex' :
@@ -59,9 +62,16 @@ switch ($newUserType) { //checks the user type to be inserted
 
 
 
-function customer($sqlq) {
+function customer($comp, $tel, $un) {
+	$sqlq="insert into regular_customer values(null, '$comp', $tel, '$un');";
 	$res = mysqli_query($GLOBALS['conn'], $sqlq);
-	//result
+	if(!res){
+		echo "error inserting the customer";
+		echo mysqli_error();
+		return;
+	}
+	echo "<script>alert('insertion succesful')</script>";
+	header("Location: index.php");
 }
 
 function salesEx() {

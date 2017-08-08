@@ -8,7 +8,7 @@ require_once 'dbcon.php';
 	$name = $_POST['euname'];
 	$password = $_POST['passwd'];
 	
-	$checkName = "select * from user where username='$name'";
+	$checkName = "select * from user where user_name='$name'";
 	
 	$result = mysqli_query($conn, $checkName);
 	

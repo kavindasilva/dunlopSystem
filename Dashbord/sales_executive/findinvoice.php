@@ -377,8 +377,8 @@
 
 </div>
 
-<!-- jQuery 3.1.1 -->
-<script src="../../js/jquery-3.1.1.min.js"></script>
+<!-- jQuery 3.1.1 incase of jqueary error try uncommenting this
+<script src="../../js/jquery-3.1.1.min.js"></script>-->
 <!-- Bootstrap no need 3.3.7 -->
 <script src="../../js/bootstrap.min.js"></script>
 <!-- FastClick no need -->

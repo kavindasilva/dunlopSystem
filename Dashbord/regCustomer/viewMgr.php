@@ -42,7 +42,7 @@ $_SESSION['user']="Test1";
  }
 
 /**/
-//include '../php/dbcon2.php';
+include '../php/dbcon2.php';
 //include  //header files & css,JS
 
 ?>
@@ -154,7 +154,6 @@ $_SESSION['user']="Test1";
         </li>
        
         <li class="treeview">
-
           <a href="#">
             <i class="fa fa-edit"></i> <span>Users</span>
             <span class="pull-right-container">
@@ -211,21 +210,15 @@ $_SESSION['user']="Test1";
     <!-- Content Header (Page header) -->
     <section class="content-header">
    <script type="text/javascript" src="adminFun.js"></script>
-	<B>admin control panel</b> <br/>
-	Select a user type to insert<br/>
-<div class="">
-	<a href="adduser.php?type=cust"><button class="list-group-item" name="" value="">Customer</button></a>
-	<a href="adduser.php?type=salex"><button class="list-group-item" name="" value="">Sales Executive</button></a>
-	<a href="adduser.php?type=dealer"><button class="list-group-item" name="" value="">Dealer</button></a> 
+	<h2>admin control panel</h2> <br/>
 	
-	<a href="adduser.php?type=suppl"><button class="list-group-item" name="" value="">Supplier</button></a>
-	<a href="adduser.php?type="><button class="" name="" value="" hidden></button></a>
-	<a href="adduser.php?type="><button class="" name="" value="" hidden></button></a> <br />
+	<!--searchRows(trindex, eleid, tableid)-->
 	
-	<a href="adduser.php?type="><button class="" name="" value="" hidden></button></a>
-	<a href="adduser.php?type="><button class="" name="" value="" hidden></button></a> <br />
+	<input type='text' class="" id="srch1" onkeyup="searchRows(1,this.id,'tblMgr');" placeholder="search by name"/><br/>
 	
-</div>
+	<?php viewAllMgr(); ?>
+	
+	
 <!--form method="get" action="">
 <input ty />
 </form-->
@@ -281,39 +274,34 @@ $_SESSION['user']="Test1";
 
 <?php
 //view all users
-function viewAll2(){
-	$sqlq = "select * from users;"; //sql query, users list
+function viewAllMgr(){
+	$sqlq = "select * from employee;"; //sql query, users list
 	$res = mysqli_query($GLOBALS['conn'] , $sqlq); //result
 	
 	if (mysqli_num_rows($res) == 0) //check result
 		echo "<p>No users in the system</p>";
 	
 	else {
-		echo "<table id='tblstd'>";
-		echo "<tr> <th>ID</th> <th></th> <th>First name</th> <th>Last name</th> <th>Birthday</th> <th>class</th>";
-		echo " <th>sex</th> <th>telephone1</th> <th>telephone2</th> <th>Address</th></tr>";
+		echo "<table id='tblMgr' class='table table-striped'>";
+		echo "<tr> <th>ID</th> <th>Name</th> <th>Telephone</th> <th>User type</th> <th>Username</th></tr>";
+		//echo " <th>sex</th> <th>telephone1</th> <th>telephone2</th> <th>Address</th></tr>";
 		
 		while ($row = mysqli_fetch_array($res)) {
-			echo "<form method='post' action='funs1.php'>";
-			//echo "<form method='post' action='funs1.php' onsubmit='confirmD();'>";
-			//echo "<form method='post' action=''>"; //auto refreshing
+			echo "<form method='post' action='adminfuns2.php'>";
 			
-			echo "<tr><input type='text' name='sid' value='" . $row['sid'] . "' hidden/>"; //make teacher
+			echo "<tr><input type='text' name='eid' value='" . $row['e_id'] . "' hidden/>"; //to track the employee id
 			echo "<input type='text' name='actor' value='ss' hidden/>"; //set as student 
 			
-			echo "<td>" . $row['sid'] . "</td>";
-			echo "<td>" . $row['photo'] . "</td>";
-			echo "<td>" . $row['fname'] . "</td>";
-			echo "<td>" . $row['lname'] . "</td>";
-			echo "<td>" . $row['dob'] . "</td>";
-			echo "<td>" . $row['class'] . "</td>";
-			echo "<td>" . $row['gender'] . "</td>";
-			echo "<td>" . $row['tel1'] . "</td>";
-			echo "<td>" . $row['tel2'] . "</td>";
-			echo "<td>" . $row['address'] . "</td>";
+			echo "<td>" . $row['e_id'] . "</td>";
+			echo "<td>" . $row['name'] . "</td>";
+			echo "<td>" . $row['tel'] . "</td>";
+			echo "<td>" . $row['type'] . "</td>";
+			echo "<td>" . $row['user_user_name'] . "</td>";
+
 			
-			echo "<td><input type='submit' name='update' onclick='return confirmU()' value='Update'/></td>";
-			echo "<td><input type='submit' name='delete' onclick='return confirmD()' value='DELETE' style='color:red'/></td></tr></form>";	
+			echo "<td><input type='submit' name='updatemgr' onclick='return confirmU()' value='Update'/></td>";
+			echo "<td><input type='submit' name='resetmgr' onclick='return confirmU()' value='Reset password'/></td>";
+			echo "<td><input type='submit' name='deletemgr' onclick='return confirmD()' value='DELETE' style='color:red'/></td></tr></form>";	
 		}
 		echo "</table>";
 	}

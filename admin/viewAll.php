@@ -154,7 +154,6 @@ $_SESSION['user']="Test1";
         </li>
        
         <li class="treeview">
-
           <a href="#">
             <i class="fa fa-edit"></i> <span>Users</span>
             <span class="pull-right-container">
@@ -212,20 +211,9 @@ $_SESSION['user']="Test1";
     <section class="content-header">
    <script type="text/javascript" src="adminFun.js"></script>
 	<B>admin control panel</b> <br/>
-	Select a user type to insert<br/>
-<div class="">
-	<a href="adduser.php?type=cust"><button class="list-group-item" name="" value="">Customer</button></a>
-	<a href="adduser.php?type=salex"><button class="list-group-item" name="" value="">Sales Executive</button></a>
-	<a href="adduser.php?type=dealer"><button class="list-group-item" name="" value="">Dealer</button></a> 
 	
-	<a href="adduser.php?type=suppl"><button class="list-group-item" name="" value="">Supplier</button></a>
-	<a href="adduser.php?type="><button class="" name="" value="" hidden></button></a>
-	<a href="adduser.php?type="><button class="" name="" value="" hidden></button></a> <br />
 	
-	<a href="adduser.php?type="><button class="" name="" value="" hidden></button></a>
-	<a href="adduser.php?type="><button class="" name="" value="" hidden></button></a> <br />
 	
-</div>
 <!--form method="get" action="">
 <input ty />
 </form-->
@@ -282,6 +270,46 @@ $_SESSION['user']="Test1";
 <?php
 //view all users
 function viewAll2(){
+	$sqlq = "select * from users;"; //sql query, users list
+	$res = mysqli_query($GLOBALS['conn'] , $sqlq); //result
+	
+	if (mysqli_num_rows($res) == 0) //check result
+		echo "<p>No users in the system</p>";
+	
+	else {
+		echo "<table id='tblstd'>";
+		echo "<tr> <th>ID</th> <th></th> <th>First name</th> <th>Last name</th> <th>Birthday</th> <th>class</th>";
+		echo " <th>sex</th> <th>telephone1</th> <th>telephone2</th> <th>Address</th></tr>";
+		
+		while ($row = mysqli_fetch_array($res)) {
+			echo "<form method='post' action='funs1.php'>";
+			//echo "<form method='post' action='funs1.php' onsubmit='confirmD();'>";
+			//echo "<form method='post' action=''>"; //auto refreshing
+			
+			echo "<tr><input type='text' name='sid' value='" . $row['sid'] . "' hidden/>"; //make teacher
+			echo "<input type='text' name='actor' value='ss' hidden/>"; //set as student 
+			
+			echo "<td>" . $row['sid'] . "</td>";
+			echo "<td>" . $row['photo'] . "</td>";
+			echo "<td>" . $row['fname'] . "</td>";
+			echo "<td>" . $row['lname'] . "</td>";
+			echo "<td>" . $row['dob'] . "</td>";
+			echo "<td>" . $row['class'] . "</td>";
+			echo "<td>" . $row['gender'] . "</td>";
+			echo "<td>" . $row['tel1'] . "</td>";
+			echo "<td>" . $row['tel2'] . "</td>";
+			echo "<td>" . $row['address'] . "</td>";
+			
+			echo "<td><input type='submit' name='update' onclick='return confirmU()' value='Update'/></td>";
+			echo "<td><input type='submit' name='delete' onclick='return confirmD()' value='DELETE' style='color:red'/></td></tr></form>";	
+		}
+		echo "</table>";
+	}
+	
+}
+
+//view all dealers
+function viewDealer(){
 	$sqlq = "select * from users;"; //sql query, users list
 	$res = mysqli_query($GLOBALS['conn'] , $sqlq); //result
 	

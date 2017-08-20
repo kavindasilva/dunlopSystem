@@ -3,21 +3,21 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>SKMM | Admin Panel</title>
+	<title>SKMM | Customer Panel</title>
 	
 	<!-- Tell the browser to be responsive to screen width -->
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	<!-- Bootstrap 3.3.7 -->
-	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../css/bootstrap.min.css">
 	<!-- Font Awesome -->
-	<link rel="stylesheet" href="../fonts/font-awesome.min.css">
+	<link rel="stylesheet" href="../../fonts/font-awesome.min.css">
 	<!-- Ionicons -->
-	<link rel="stylesheet" href="../icon/ionicons.min.css">
+	<link rel="stylesheet" href="../../icon/ionicons.min.css">
 	<!-- Theme style -->
-	<link rel="stylesheet" href="../css/AdminLTE.min.css">
+	<link rel="stylesheet" href="../../css/AdminLTE.min.css">
 	<!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-	<link rel="stylesheet" href="../css/skins/_all-skins.min.css">
+	<link rel="stylesheet" href="../../css/skins/_all-skins.min.css">
 
     <!-- Google Font ->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"-->
@@ -42,17 +42,17 @@ $_SESSION['user']="Test1";
  }
 
 /**/
-//include '../php/dbcon2.php';
+include '../../php/dbcon2.php';
 //include  //header files & css,JS
 
 ?>
   <header class="main-header">
     <!-- Logo -->
-    <a href="../index.php" class="logo">
+    <a href="../../index.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><img src="../images/skmlogo.jpg" style="height:50px;" alt="User Image"></span>
+      <span class="logo-mini"><img src="../../images/skmlogo.jpg" style="height:50px;" alt="User Image"></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg" ><img src="../images/skmlogo.jpg" style="height:50px;" alt="User Image"><b>Dunlop</b></span>
+      <span class="logo-lg" ><img src="../../images/skmlogo.jpg" style="height:50px;" alt="User Image"><b>Dunlop</b></span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -76,13 +76,13 @@ $_SESSION['user']="Test1";
              <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="../images/user8-128x128.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Alexander Pierce <?php echo $_SESSION['user']; ?></span>
+              <img src="../../images/user8-128x128.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs"><?php echo $_SESSION['user']; ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="../images/user8-128x128.jpg" class="img-circle" alt="User Image">
+                <img src="../../images/user8-128x128.jpg" class="img-circle" alt="User Image">
 
                 <p>
                   Sales-Executive
@@ -97,7 +97,7 @@ $_SESSION['user']="Test1";
                 </div>
 				 
                 <div class="pull-right">
-                  <a href="../php/logout.php" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="../../php/logout.php" class="btn btn-default btn-flat">Sign out</a>
                 </div>
 				
 				<div style="margin-left:77px;">
@@ -123,10 +123,10 @@ $_SESSION['user']="Test1";
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="../images/user8-128x128.jpg" class="img-circle" alt="User Image">
+          <img src="../../images/user8-128x128.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce<?php echo $_SESSION['user']; ?></p>
+          <p><?php echo $_SESSION['user']; ?></p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -144,7 +144,7 @@ $_SESSION['user']="Test1";
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">MAIN NAVIGATION</li>
+        <li class="header">NAVIGATION</li>
         <li  id="dd"class="active treeview menu-open">
           <a href="index.php">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
@@ -156,32 +156,31 @@ $_SESSION['user']="Test1";
         <li class="treeview">
 
           <a href="#">
-            <i class="fa fa-edit"></i> <span>Users</span>
+            <i class="fa fa-edit"></i> <span>Quotations</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href=""><i class="fa fa-circle-o"></i> New user</a></li>
+            <li><a href=""><i class="fa fa-circle-o"></i> New quotation</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> View all</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Edit details</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Reset password</a></li>
-            <li><a href="#"><i class="fa fa-circle-o" style="color:#ee0000"></i> Remove user</a></li>
            </ul>
         </li>
 		
 		<li class="treeview">
 
           <a href="viewMgr.php">
-            <i class="fa fa-edit"></i> <span>Managers</span>
+            <i class="fa fa-edit"></i> <span>Orders</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
+            <li><a href="viewMgr.php"><i class="fa fa-circle-o"></i> New orders</a></li>
             <li><a href="viewMgr.php"><i class="fa fa-circle-o"></i> View all</a></li>
-            <li><a href="viewMgr.php"><i class="fa fa-circle-o"></i> Edit details</a></li>
-            <li><a href="viewMgr.php"><i class="fa fa-circle-o"></i> Reset password</a></li>
+            <li><a href="viewMgr.php"><i class="fa fa-circle-o"></i> Edit orders</a></li>
+            <li><a href="viewMgr.php"><i class="fa fa-circle-o" style="color: #ee0000"></i> Cancel</a></li>
            </ul>
         </li>
 		
@@ -194,7 +193,7 @@ $_SESSION['user']="Test1";
           </a>
           <ul class="treeview-menu">
             <li><a href=""><i class="fa fa-circle-o"></i> Change password</a></li>
-            <li><a href="../php/logout.php"><i class="fa fa-circle-o"></i> Sign out</a></li>
+            <li><a href="../../php/logout.php"><i class="fa fa-circle-o"></i> Sign out</a></li>
           </ul>
         </li>
     
@@ -211,19 +210,11 @@ $_SESSION['user']="Test1";
     <!-- Content Header (Page header) -->
     <section class="content-header">
    <script type="text/javascript" src="adminFun.js"></script>
-	<B>admin control panel</b> <br/>
+	<B>Customer dashboard</b> <br/>
 	Select a user type to insert<br/>
 <div class="">
-	<a href="adduser.php?type=cust"><button class="list-group-item" name="" value="">Customer</button></a>
-	<a href="adduser.php?type=salex"><button class="list-group-item" name="" value="">Sales Executive</button></a>
-	<a href="adduser.php?type=dealer"><button class="list-group-item" name="" value="">Dealer</button></a> 
 	
-	<a href="adduser.php?type=suppl"><button class="list-group-item" name="" value="">Supplier</button></a>
-	<a href="adduser.php?type="><button class="" name="" value="" hidden></button></a>
-	<a href="adduser.php?type="><button class="" name="" value="" hidden></button></a> <br />
 	
-	<a href="adduser.php?type="><button class="" name="" value="" hidden></button></a>
-	<a href="adduser.php?type="><button class="" name="" value="" hidden></button></a> <br />
 	
 </div>
 <!--form method="get" action="">
@@ -266,15 +257,15 @@ $_SESSION['user']="Test1";
 </div>
 
 <!-- jQuery 3.1.1 -->
-<script src="../js/jquery-3.1.1.min.js"></script>
+<script src="../../js/jquery-3.1.1.min.js"></script>
 <!-- Bootstrap no need 3.3.7 -->
-<script src="../js/bootstrap.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
 <!-- FastClick no need -->
-<script src="../js/fastclick.js"></script>
+<script src="../../js/fastclick.js"></script>
 <!-- AdminLTE App -->
-<script src="../js/adminlte.js"></script>
+<script src="../../js/adminlte.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="../js/demo.js"></script>
+<script src="../../js/demo.js"></script>
 
 </body>
 </html>

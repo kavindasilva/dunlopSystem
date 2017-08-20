@@ -29,17 +29,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			session_start();
 			
 			$_SESSION['user']=$r['user_name']; //user name
-				 header("Location:../Dashbord/adminlte.io/themes/AdminLTE/index2.html"); //for testing purposes
+			$usrtype=$r['type'];
+			$_SESSION['usertype']=$usrtype; //user type. tp prevent unwanted access
+			//header("Location:../Dashbord/adminlte.io/themes/AdminLTE/index2.html"); //for testing purposes
 			
 			//adm=admin, sae=sales exe, chf=chief mgr...
-			$usrtype=$r['type'];
-			
+						
 			if($usrtype=='adm')
 				header('Location: ../admin/index.php');
 				//echo "you are the system admin ";
 				
 			elseif($usrtype=='sae')
-				header('Location: )
+				header('Location: ../dashboard/sales_executive/index2.html');
 				//echo "you are a sales executive";
 			elseif($usrtype=='chf')
 				echo "hi lokka";

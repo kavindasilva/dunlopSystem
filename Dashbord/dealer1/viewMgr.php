@@ -3,21 +3,21 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>SKMM | Customer Panel</title>
+	<title>SKMM | Admin Panel</title>
 	
 	<!-- Tell the browser to be responsive to screen width -->
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	<!-- Bootstrap 3.3.7 -->
-	<link rel="stylesheet" href="../../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
 	<!-- Font Awesome -->
-	<link rel="stylesheet" href="../../fonts/font-awesome.min.css">
+	<link rel="stylesheet" href="../fonts/font-awesome.min.css">
 	<!-- Ionicons -->
-	<link rel="stylesheet" href="../../icon/ionicons.min.css">
+	<link rel="stylesheet" href="../icon/ionicons.min.css">
 	<!-- Theme style -->
-	<link rel="stylesheet" href="../../css/AdminLTE.min.css">
+	<link rel="stylesheet" href="../css/AdminLTE.min.css">
 	<!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-	<link rel="stylesheet" href="../../css/skins/_all-skins.min.css">
+	<link rel="stylesheet" href="../css/skins/_all-skins.min.css">
 
     <!-- Google Font ->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"-->
@@ -42,17 +42,17 @@ $_SESSION['user']="Test1";
  }
 
 /**/
-include '../../php/dbcon2.php';
+include '../php/dbcon2.php';
 //include  //header files & css,JS
 
 ?>
   <header class="main-header">
     <!-- Logo -->
-    <a href="../../index.php" class="logo">
+    <a href="../index.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><img src="../../images/skmlogo.jpg" style="height:50px;" alt="User Image"></span>
+      <span class="logo-mini"><img src="../images/skmlogo.jpg" style="height:50px;" alt="User Image"></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg" ><img src="../../images/skmlogo.jpg" style="height:50px;" alt="User Image"><b>Dunlop</b></span>
+      <span class="logo-lg" ><img src="../images/skmlogo.jpg" style="height:50px;" alt="User Image"><b>Dunlop</b></span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -76,28 +76,28 @@ include '../../php/dbcon2.php';
              <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="../../images/user8-128x128.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs"><?php echo $_SESSION['user']; ?></span>
+              <img src="../images/user8-128x128.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">Alexander Pierce <?php echo $_SESSION['user']; ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="../../images/user8-128x128.jpg" class="img-circle" alt="User Image">
+                <img src="../images/user8-128x128.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  Registered customer
+                  Sales-Executive
                  <small>S.K.Munasinghe Motors</small>
                 </p>
               </li>
          
                      <!-- Menu Footer-->
               <li class="user-footer">
-                <!--div class="pull-left">
+                <div class="pull-left">
                   <a href="settings.php" class="btn btn-default btn-flat">Profile</a>
-                </div-->
+                </div>
 				 
                 <div class="pull-right">
-                  <a href="../../php/logout.php" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="../php/logout.php" class="btn btn-default btn-flat">Sign out</a>
                 </div>
 				
 				<div style="margin-left:77px;">
@@ -123,10 +123,10 @@ include '../../php/dbcon2.php';
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="../../images/user8-128x128.jpg" class="img-circle" alt="User Image">
+          <img src="../images/user8-128x128.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p><?php echo $_SESSION['user']; ?></p>
+          <p>Alexander Pierce<?php echo $_SESSION['user']; ?></p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -144,7 +144,7 @@ include '../../php/dbcon2.php';
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">NAVIGATION</li>
+        <li class="header">MAIN NAVIGATION</li>
         <li  id="dd"class="active treeview menu-open">
           <a href="index.php">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
@@ -154,33 +154,33 @@ include '../../php/dbcon2.php';
         </li>
        
         <li class="treeview">
-
           <a href="#">
-            <i class="fa fa-edit"></i> <span>Quotations</span>
+            <i class="fa fa-edit"></i> <span>Users</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href=""><i class="fa fa-circle-o"></i> New quotation</a></li>
+            <li><a href=""><i class="fa fa-circle-o"></i> New user</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> View all</a></li>
-            <li><a href="#"><i class="fa fa-circle-o" style="color: #ee0000"></i> Remove quotation</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Edit details</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Reset password</a></li>
+            <li><a href="#"><i class="fa fa-circle-o" style="color:#ee0000"></i> Remove user</a></li>
            </ul>
         </li>
 		
 		<li class="treeview">
 
-          <a href="#">
-            <i class="fa fa-edit"></i> <span>Orders</span>
+          <a href="viewMgr.php">
+            <i class="fa fa-edit"></i> <span>Managers</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href=".php"><i class="fa fa-circle-o"></i> New orders</a></li>
-            <li><a href=".php"><i class="fa fa-circle-o"></i> View all</a></li>
-            <li><a href=".php"><i class="fa fa-circle-o"></i> Edit orders</a></li>
-            <li><a href=".php"><i class="fa fa-circle-o" style="color: #ee0000"></i> Cancel</a></li>
+            <li><a href="viewMgr.php"><i class="fa fa-circle-o"></i> View all</a></li>
+            <li><a href="viewMgr.php"><i class="fa fa-circle-o"></i> Edit details</a></li>
+            <li><a href="viewMgr.php"><i class="fa fa-circle-o"></i> Reset password</a></li>
            </ul>
         </li>
 		
@@ -192,8 +192,8 @@ include '../../php/dbcon2.php';
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="setting.php"><i class="fa fa-circle-o"></i> Change password</a></li>
-            <li><a href="../../php/logout.php"><i class="fa fa-circle-o"></i> Sign out</a></li>
+            <li><a href=""><i class="fa fa-circle-o"></i> Change password</a></li>
+            <li><a href="../php/logout.php"><i class="fa fa-circle-o"></i> Sign out</a></li>
           </ul>
         </li>
     
@@ -210,13 +210,15 @@ include '../../php/dbcon2.php';
     <!-- Content Header (Page header) -->
     <section class="content-header">
    <script type="text/javascript" src="adminFun.js"></script>
-	<B>Customer dashboard</b> <br/>
-	<br/>
-<div class="">
+	<h2>admin control panel</h2> <br/>
+	
+	<!--searchRows(trindex, eleid, tableid)-->
+	
+	<input type='text' class="" id="srch1" onkeyup="searchRows(1,this.id,'tblMgr');" placeholder="search by name"/><br/>
+	
+	<?php viewAllMgr(); ?>
 	
 	
-	
-</div>
 <!--form method="get" action="">
 <input ty />
 </form-->
@@ -257,54 +259,49 @@ include '../../php/dbcon2.php';
 </div>
 
 <!-- jQuery 3.1.1 -->
-<script src="../../js/jquery-3.1.1.min.js"></script>
+<script src="../js/jquery-3.1.1.min.js"></script>
 <!-- Bootstrap no need 3.3.7 -->
-<script src="../../js/bootstrap.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
 <!-- FastClick no need -->
-<script src="../../js/fastclick.js"></script>
+<script src="../js/fastclick.js"></script>
 <!-- AdminLTE App -->
-<script src="../../js/adminlte.js"></script>
+<script src="../js/adminlte.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="../../js/demo.js"></script>
+<script src="../js/demo.js"></script>
 
 </body>
 </html>
 
 <?php
 //view all users
-function viewAll2(){
-	$sqlq = "select * from users;"; //sql query, users list
+function viewAllMgr(){
+	$sqlq = "select * from employee;"; //sql query, users list
 	$res = mysqli_query($GLOBALS['conn'] , $sqlq); //result
 	
 	if (mysqli_num_rows($res) == 0) //check result
 		echo "<p>No users in the system</p>";
 	
 	else {
-		echo "<table id='tblstd'>";
-		echo "<tr> <th>ID</th> <th></th> <th>First name</th> <th>Last name</th> <th>Birthday</th> <th>class</th>";
-		echo " <th>sex</th> <th>telephone1</th> <th>telephone2</th> <th>Address</th></tr>";
+		echo "<table id='tblMgr' class='table table-striped'>";
+		echo "<tr> <th>ID</th> <th>Name</th> <th>Telephone</th> <th>User type</th> <th>Username</th></tr>";
+		//echo " <th>sex</th> <th>telephone1</th> <th>telephone2</th> <th>Address</th></tr>";
 		
 		while ($row = mysqli_fetch_array($res)) {
-			echo "<form method='post' action='funs1.php'>";
-			//echo "<form method='post' action='funs1.php' onsubmit='confirmD();'>";
-			//echo "<form method='post' action=''>"; //auto refreshing
+			echo "<form method='post' action='adminfuns2.php'>";
 			
-			echo "<tr><input type='text' name='sid' value='" . $row['sid'] . "' hidden/>"; //make teacher
+			echo "<tr><input type='text' name='eid' value='" . $row['e_id'] . "' hidden/>"; //to track the employee id
 			echo "<input type='text' name='actor' value='ss' hidden/>"; //set as student 
 			
-			echo "<td>" . $row['sid'] . "</td>";
-			echo "<td>" . $row['photo'] . "</td>";
-			echo "<td>" . $row['fname'] . "</td>";
-			echo "<td>" . $row['lname'] . "</td>";
-			echo "<td>" . $row['dob'] . "</td>";
-			echo "<td>" . $row['class'] . "</td>";
-			echo "<td>" . $row['gender'] . "</td>";
-			echo "<td>" . $row['tel1'] . "</td>";
-			echo "<td>" . $row['tel2'] . "</td>";
-			echo "<td>" . $row['address'] . "</td>";
+			echo "<td>" . $row['e_id'] . "</td>";
+			echo "<td>" . $row['name'] . "</td>";
+			echo "<td>" . $row['tel'] . "</td>";
+			echo "<td>" . $row['type'] . "</td>";
+			echo "<td>" . $row['user_user_name'] . "</td>";
+
 			
-			echo "<td><input type='submit' name='update' onclick='return confirmU()' value='Update'/></td>";
-			echo "<td><input type='submit' name='delete' onclick='return confirmD()' value='DELETE' style='color:red'/></td></tr></form>";	
+			echo "<td><input type='submit' name='updatemgr' onclick='return confirmU()' value='Update'/></td>";
+			echo "<td><input type='submit' name='resetmgr' onclick='return confirmU()' value='Reset password'/></td>";
+			echo "<td><input type='submit' name='deletemgr' onclick='return confirmD()' value='DELETE' style='color:red'/></td></tr></form>";	
 		}
 		echo "</table>";
 	}

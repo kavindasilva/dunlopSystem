@@ -26,6 +26,7 @@
 
 <body class="hold-transition skin-blue sidebar-mini">
 
+
 <div class="wrapper">
 <?php
 //session maintainence // kavindasilva
@@ -42,7 +43,7 @@ $_SESSION['user']="Test1";
  }
 
 /**/
-include '../../php/dbcon2.php';
+include_once '../../php/dbcon2.php';
 //include  //header files & css,JS
 
 ?>
@@ -211,12 +212,28 @@ include '../../php/dbcon2.php';
     <section class="content-header">
    <script type="text/javascript" src="adminFun.js"></script>
 	<B>Customer dashboard</b> <br/>
-	<br/>
-<div class="">
-	
-	
-	
+	Select a user type to insert<br/>
+	<div class="jumbotron">
+        <h3>Change password</h3>
+		
+<DIV class="">		
+<?php
+if(isset($_POST['passconf'])){
+	//include the file required to change user password
+	include_once "../../php/changepass.php";
+}
+?>
 </div>
+		
+		<form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+		<table>
+			<tr><td>Current password</td><td><input type="password" name="oldpass"/></td></tr>
+			<tr><td>New password</td><td><input type="password" name="newpass1"/></td></tr>
+			<tr><td>Confirm new password</td><td><input type="password" name="newpass"/></td></tr>
+			<tr><td><input style="width:100%" type="submit" name="passconf" value="OK"/></td><td><input style="width:100%" type="reset" value="clear"/></td></tr>
+		</table>
+		</form>
+	</div>
 <!--form method="get" action="">
 <input ty />
 </form-->
@@ -273,42 +290,7 @@ include '../../php/dbcon2.php';
 <?php
 //view all users
 function viewAll2(){
-	$sqlq = "select * from users;"; //sql query, users list
-	$res = mysqli_query($GLOBALS['conn'] , $sqlq); //result
-	
-	if (mysqli_num_rows($res) == 0) //check result
-		echo "<p>No users in the system</p>";
-	
-	else {
-		echo "<table id='tblstd'>";
-		echo "<tr> <th>ID</th> <th></th> <th>First name</th> <th>Last name</th> <th>Birthday</th> <th>class</th>";
-		echo " <th>sex</th> <th>telephone1</th> <th>telephone2</th> <th>Address</th></tr>";
-		
-		while ($row = mysqli_fetch_array($res)) {
-			echo "<form method='post' action='funs1.php'>";
-			//echo "<form method='post' action='funs1.php' onsubmit='confirmD();'>";
-			//echo "<form method='post' action=''>"; //auto refreshing
-			
-			echo "<tr><input type='text' name='sid' value='" . $row['sid'] . "' hidden/>"; //make teacher
-			echo "<input type='text' name='actor' value='ss' hidden/>"; //set as student 
-			
-			echo "<td>" . $row['sid'] . "</td>";
-			echo "<td>" . $row['photo'] . "</td>";
-			echo "<td>" . $row['fname'] . "</td>";
-			echo "<td>" . $row['lname'] . "</td>";
-			echo "<td>" . $row['dob'] . "</td>";
-			echo "<td>" . $row['class'] . "</td>";
-			echo "<td>" . $row['gender'] . "</td>";
-			echo "<td>" . $row['tel1'] . "</td>";
-			echo "<td>" . $row['tel2'] . "</td>";
-			echo "<td>" . $row['address'] . "</td>";
-			
-			echo "<td><input type='submit' name='update' onclick='return confirmU()' value='Update'/></td>";
-			echo "<td><input type='submit' name='delete' onclick='return confirmD()' value='DELETE' style='color:red'/></td></tr></form>";	
-		}
-		echo "</table>";
-	}
-	
+
 }
 
 ?>

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>SKMM | Customer Panel</title>
+	<title>SKMM | Dealer Panel</title>
 	
 	<!-- Tell the browser to be responsive to screen width -->
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -42,7 +42,7 @@ $_SESSION['user']="Test1";
  }
 
 /**/
-include '../../php/dbcon2.php';
+include_once '../../php/dbcon2.php';
 //include  //header files & css,JS
 
 ?>
@@ -85,7 +85,7 @@ include '../../php/dbcon2.php';
                 <img src="../../images/user8-128x128.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  Registered customer
+                  Authorized dealer
                  <small>S.K.Munasinghe Motors</small>
                 </p>
               </li>
